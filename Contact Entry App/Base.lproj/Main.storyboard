@@ -71,6 +71,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tU2-Wd-4SC" userLabel="FirstTextfield">
                                 <rect key="frame" x="182" y="242" width="169" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="First Name"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -80,6 +81,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your yast name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDb-k2-Rca" userLabel="lastTextfield">
                                 <rect key="frame" x="182" y="288" width="169" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Last Name"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -89,6 +91,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Company name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dt6-Il-kt0" userLabel="companyTextfield">
                                 <rect key="frame" x="182" y="337" width="169" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Company"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -98,6 +101,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-Pz-9PY">
                                 <rect key="frame" x="182" y="379" width="169" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Phone"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
@@ -107,6 +111,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ApK-SZ-3Z3">
                                 <rect key="frame" x="182" y="421" width="169" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Email"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
@@ -131,6 +136,11 @@
                         <outlet property="lastField" destination="dDb-k2-Rca" id="ZZR-rP-G8n"/>
                         <outlet property="phoneField" destination="rxf-Pz-9PY" id="Udg-4G-K6n"/>
                         <outlet property="titleLabel" destination="sWJ-nY-zYA" id="cYc-yG-OPQ"/>
+                        <outletCollection property="textfields" destination="tU2-Wd-4SC" collectionClass="NSMutableArray" id="Osd-rf-TdJ"/>
+                        <outletCollection property="textfields" destination="dDb-k2-Rca" collectionClass="NSMutableArray" id="NOm-Hz-Uhc"/>
+                        <outletCollection property="textfields" destination="dt6-Il-kt0" collectionClass="NSMutableArray" id="lxv-Ip-xmu"/>
+                        <outletCollection property="textfields" destination="rxf-Pz-9PY" collectionClass="NSMutableArray" id="on5-Jk-Z5W"/>
+                        <outletCollection property="textfields" destination="ApK-SZ-3Z3" collectionClass="NSMutableArray" id="Us9-Zs-dKx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

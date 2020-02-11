@@ -17,16 +17,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var companyField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var emailField: UITextField!
+    @IBOutlet var textfields: [UITextField]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         gesture()
         
+        
     }
 
     @IBAction func saveButton(_ sender: UIButton) {
-       alertValidation()
+        alertValidation()
     }
     
     @IBAction func texfieldDoneEditing(_ sender: UITextField){
@@ -71,19 +73,21 @@ class ViewController: UIViewController {
     
 //     Creating an alert based on validation rulea
     func alertValidation (){
-        if firstField.text == "" || lastField.text == "" || companyField.text == "" ||  phoneField.text == "" || emailField.text == "" {
-            let alert = UIAlertController(title: "Error", message: "One of the field is empty", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            
-            } else {
-            
-            guard  let firstName = firstField.text else {return}
-            let alert = UIAlertController(title: "New Contact Saved", message: " \(firstName) is now a contact!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: emptyTextfield)
-            
+        
+        for textfield in textfields {
+            let textfieldIdentifier = textfield.accessibilityIdentifier ?? ""
+            if textfield.text?.isEmpty == true {
+                let alert = UIAlertController(title: "Error", message: " \(textfieldIdentifier) field is empty", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
+        guard  let firstName = firstField.text else {return}
+        let alert = UIAlertController(title: "New Contact Saved", message: " \(firstName) is now a contact!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: emptyTextfield)
+        
     }
-}
+            
 
+}
